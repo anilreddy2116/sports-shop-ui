@@ -1,0 +1,63 @@
+<div class="d-flex justify-content-between m-3">
+    <h4>Edit Order</h4>
+
+    <button mat-button (click)="onClose()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+
+<div style="overflow: auto; height: 450px;">
+    <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+
+        <div class="m-3 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Order Id</span>
+            </div>
+            <input readonly="readonly" type="text"
+            class="form-control"
+            name="OrderId"
+            #OrderId="ngModel"
+            [(ngModel)]="service.formData.OrderId">
+        </div>
+
+        <div class="m-3 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Order Date</span>
+            </div>
+            <input required minlength="2" type="text"
+            class="form-control"
+            name="OrderDate"
+            #OrderDate="ngModel"
+            [(ngModel)]="service.formData.OrderDate">
+        </div>
+
+        <div class="m-3 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">CustomerId</span>
+            </div>
+            <input required minlength="9" type="text"
+            class="form-control"
+            name="CustomerId"
+            #CustomerId="ngModel"
+            [(ngModel)]="service.formData.CustomerId">
+        </div>
+
+        <div class="m-3 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">ItemId</span>
+            </div>
+            <input required minlength="2" type="text"
+            class="form-control"
+            name="ItemId"
+            #ItemId="ngModel"
+            [(ngModel)]="service.formData.ItemId">
+        </div>
+
+        <button class="m-3" mat-raised-button color="primary" type = "submit"
+        [disabled]="form.invalid">Update Order</button>
+
+    </form>
+
+</div>
+
+

@@ -1,0 +1,62 @@
+<div class="d-flex justify-content-between">
+    <h4>Add new Customer</h4>
+
+    <button mat-button (click)="onClose()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+
+<div style="overflow: auto; height: 450px;">
+    <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+
+        <div class="m-3 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Customer Name</span>
+            </div>
+            <input required minlength="2" type="text"
+            class="form-control"
+            name="CustomerName"
+            #CustomerName="ngModel"
+            [(ngModel)]="service.formData.CustomerName">
+        </div>
+
+        <div class="m-3 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Customer PhoneNo</span>
+            </div>
+            <input required minlength="9" type="text"
+            class="form-control"
+            name="CustomerPhoneNo"
+            #CustomerPhoneNo="ngModel"
+            [(ngModel)]="service.formData.CustomerPhoneNo">
+        </div>
+
+        <div class="m-3 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Customer Address</span>
+            </div>
+            <input required minlength="2" type="text"
+            class="form-control"
+            name="CustomerAddress"
+            #CustomerAddress="ngModel"
+            [(ngModel)]="service.formData.CustomerAddress">
+        </div>
+
+        <div class="m-3 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Customer EmailId</span>
+            </div>
+            <input required minlength="2" type="text"
+            class="form-control"
+            name="CustomerEmailId"
+            #CustomerEmailId="ngModel"
+            [(ngModel)]="service.formData.CustomerEmailId">
+        </div>
+
+        <button class="mt-2" mat-raised-button color="primary" type = "submit"
+        [disabled]="form.invalid">Add Customer</button>
+
+    </form>
+
+</div>
+

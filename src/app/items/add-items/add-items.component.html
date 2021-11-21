@@ -1,0 +1,61 @@
+<div class="d-flex justify-content-between">
+    <h4>Add new Item</h4>
+
+    <button mat-button (click)="onClose()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+
+<div style="overflow: auto; height: 450px;">
+    <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+
+        <div class="m-3 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Item Name</span>
+            </div>
+            <input required minlength="2" type="text"
+            class="form-control"
+            name="ItemName"
+            #ItemName="ngModel"
+            [(ngModel)]="service.formData.ItemName">
+        </div>
+
+        <div class="m-3 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Item Price</span>
+            </div>
+            <input required minlength="1" type="text"
+            class="form-control"
+            name="ItemPrice"
+            #ItemPrice="ngModel"
+            [(ngModel)]="service.formData.ItemPrice">
+        </div>
+
+        <div class="m-3 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Item Color</span>
+            </div>
+            <input required minlength="2" type="text"
+            class="form-control"
+            name="ItemColor"
+            #ItemColor="ngModel"
+            [(ngModel)]="service.formData.ItemColor">
+        </div>
+
+        <div class="m-3 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Item Size</span>
+            </div>
+            <input required minlength="1" type="text"
+            class="form-control"
+            name="ItemSize"
+            #ItemSize="ngModel"
+            [(ngModel)]="service.formData.ItemSize">
+        </div>
+
+        <button class="mt-2" mat-raised-button color="primary" type = "submit"
+        [disabled]="form.invalid">Add Item</button>
+
+    </form>
+
+</div>
